@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://softboxdev.github.io/softboxdevelopment/sitemap.xml
