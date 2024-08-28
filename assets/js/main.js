@@ -4,6 +4,10 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+// Initialize EmailJS
+
+
 !(function($) {
   "use strict";
 
@@ -198,3 +202,56 @@
   });
 
 })(jQuery);
+
+
+(function () {
+  emailjs.init("O4dRJqok5h0vlBB6e"); // Replace with your EmailJS user ID
+})();
+
+// Ensure that everything is ready after the DOM has fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+  
+  // Define the sendEmail function
+  function sendEmail() {
+    // Show the loading message
+    document.querySelector('.loading').style.display = 'block';
+    document.querySelector('.sent-message').style.display = 'none';
+    document.querySelector('.error-message').style.display = 'none';
+
+    // Collect form data
+    var nameElement = document.getElementById("name");
+    var emailElement = document.getElementById("email");
+    var subjectElement = document.getElementById("subject");
+    var messageElement = document.getElementById("message");
+
+    if (nameElement && emailElement && subjectElement && messageElement) {
+      var templateParams = {
+        from_name: nameElement.value,
+        from_email: emailElement.value,
+        subject: subjectElement.value,
+        message: messageElement.value
+      };
+
+      // Send the email using EmailJS
+      emailjs.send('service_6y6i12p', 'template_iaf8t1d', templateParams)
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+          document.querySelector('.loading').style.display = 'none';
+          document.querySelector('.sent-message').style.display = 'block';
+        }, function (error) {
+          console.log('FAILED...', error);
+          document.querySelector('.loading').style.display = 'none';
+          document.querySelector('.error-message').style.display = 'block';
+          document.querySelector('.error-message').textContent = 'There was an error sending your message. Please try again.';
+        });
+    } else {
+      console.error("Form elements not found.");
+      document.querySelector('.loading').style.display = 'none';
+      document.querySelector('.error-message').style.display = 'block';
+      document.querySelector('.error-message').textContent = 'Form elements are missing. Please try again.';
+    }
+  }
+
+  // Export sendEmail globally so it can be accessed from HTML
+  window.sendEmail = sendEmail;
+});

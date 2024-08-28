@@ -91,39 +91,7 @@
   <main id="main">
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients clients">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="zoom-in">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Clients Section -->
+    
 
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
@@ -843,7 +811,7 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Sahar Jhonson</h4>
+                <h4>Yana Zaharchenko</h4>
                 <span>Product Manager</span>
               </div>
             </div>
@@ -861,7 +829,7 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>William Anderson</h4>
+                <h4>Vladimir Zhelvis</h4>
                 <span>CTO</span>
               </div>
             </div>
@@ -879,7 +847,7 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Amanda Jepson</h4>
+                <h4>Anna Yakovleva</h4>
                 <span>Accountant</span>
               </div>
             </div>
@@ -1082,7 +1050,7 @@
 
             </div>
           </div>
-
+<!--
           <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
             <form id="contact-form" method="post" role="form" class="php-email-form">
               <div class="form-group">
@@ -1114,11 +1082,12 @@
             </form>
 
           </div>
-
+-->
         </div>
 
       </div>
     </section><!-- End Contact Section -->
+   
 
   </main><!-- End #main -->
 
@@ -1158,59 +1127,14 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("YOUR_USER_ID"); // Replace 'YOUR_USER_ID' with your EmailJS user ID
-    })();
-  </script>
+
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <!-- Include EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("O4dRJqok5h0vlBB6e"); // Replace 'YOUR_USER_ID' with your EmailJS user ID
-    })();
-  </script>
+  
 
-  <!-- JavaScript to handle form submission -->
-  <script>
-    function sendEmail() {
-      // Show the loading message
-      document.querySelector('.loading').style.display = 'block';
-      document.querySelector('.sent-message').style.display = 'none';
-      document.querySelector('.error-message').style.display = 'none';
+  
 
-      // Collect form data
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-      var subject = document.getElementById("subject").value;
-      var message = document.getElementById("message").value;
-
-      // Set up the template parameters for EmailJS
-      var templateParams = {
-        from_name: name,
-        from_email: email,
-        subject: subject,
-        message: message
-      };
-
-      // Send the email using EmailJS
-      emailjs.send('service_6y6i12p', 'template_iaf8t1d', templateParams)
-        .then(function (response) {
-          console.log('SUCCESS!', response.status, response.text);
-          document.querySelector('.loading').style.display = 'none';
-          document.querySelector('.sent-message').style.display = 'block';
-        }, function (error) {
-          console.log('FAILED...', error);
-          document.querySelector('.loading').style.display = 'none';
-          document.querySelector('.error-message').style.display = 'block';
-          document.querySelector('.error-message').textContent = 'There was an error sending your message. Please try again.';
-        });
-    }
-  </script>
 
 
 </body>
