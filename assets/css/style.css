@@ -1576,3 +1576,15 @@ section {
 #footer .footer-links a:hover {
   color: #3498db;
 }
+.team-photo-section {
+  margin-top: 40px; /* Adds space above the group photo */
+  text-align: center; /* Centers the photo horizontally */
+}
+
+.group-photo {
+  width: 80%; /* Adjust the width to fit within the content area */
+  max-width: 1000px; /* Prevents the image from being too large */
+  border-radius: 8px; /* Adds slight rounding to corners for a soft effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for depth */
+  margin: 0 auto; /* Centers the image block within its container */
+}
